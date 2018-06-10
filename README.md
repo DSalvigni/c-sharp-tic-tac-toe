@@ -2,3 +2,4 @@
 - Using of switch/while cycle to get a console game
 - 2 game players
 - Controls for win/draw/reset of the game
+- Developed by using C# and Visual Studio (CMD Console App)
