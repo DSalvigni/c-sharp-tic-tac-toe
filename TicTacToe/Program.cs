@@ -52,11 +52,9 @@ namespace TicTacToe
                            (playFields[0, 0] == playngChar.ToString() && playFields[0, 1] == playngChar.ToString() && playFields[0, 2] == playngChar.ToString())     
                         || (playFields[1, 0] == playngChar.ToString() && playFields[1, 1] == playngChar.ToString() && playFields[1, 2] == playngChar.ToString())  
                         || (playFields[2, 0] == playngChar.ToString() && playFields[2, 1] == playngChar.ToString() && playFields[2, 2] == playngChar.ToString())
-
                         || (playFields[0, 0] == playngChar.ToString() && playFields[1, 0] == playngChar.ToString() && playFields[2, 0] == playngChar.ToString())
                         || (playFields[0, 1] == playngChar.ToString() && playFields[1, 1] == playngChar.ToString() && playFields[2, 1] == playngChar.ToString())
-                        || (playFields[0, 2] == playngChar.ToString() && playFields[1, 2] == playngChar.ToString() && playFields[2, 2] == playngChar.ToString())
-                        
+                        || (playFields[0, 2] == playngChar.ToString() && playFields[1, 2] == playngChar.ToString() && playFields[2, 2] == playngChar.ToString()) 
                         || (playFields[0, 0] == playngChar.ToString() && playFields[1, 1] == playngChar.ToString() && playFields[2, 2] == playngChar.ToString())
                         || (playFields[0, 2] == playngChar.ToString() && playFields[1, 1] == playngChar.ToString() && playFields[2, 0] == playngChar.ToString())
                         )
@@ -94,9 +92,8 @@ namespace TicTacToe
                 #region
                 do
                 {            
-
-
                     Console.WriteLine("\n Player {0}: Choose your field!", player);
+                    //I check if the inserted value doesn't generate an exception because of not inserted a number
                     try
                     {
                         input = Convert.ToInt32(Console.ReadLine());  
@@ -107,6 +104,7 @@ namespace TicTacToe
                         Console.WriteLine("\n Player {0}:Please enter a correct number", player);
                     }
 
+                    //If the fields is taken thevalue of the matrix selected field is not a number -> Exit fromt he region
                     if ((input == 1) && (playFields[0, 0] == "1"))
                     {
                         inputCorrect = true;
@@ -159,8 +157,7 @@ namespace TicTacToe
 
         public static void ReSetField()
         {
-            //I clear the console once a SetField is called again
-            //Console.Clear()       
+            //I set from to initial value the matrix
             turns = 0;
             playFields[0, 0] = "1";
             playFields[0, 1] = "2";
@@ -233,5 +230,3 @@ namespace TicTacToe
 
     }
 }
-
- 
